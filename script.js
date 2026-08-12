@@ -31,47 +31,111 @@ const restaurant = {
     } ,
     orderPasta : function (ing1, ing2, ing3) {
         console.log(`Here is your delicious pasta with ${ing1}, ${ing2} and ${ing3}`);
+    },
+    orderPizza : function(mainIngredents,...otherIngredents){
+        console.log(mainIngredents);
+        console.log(otherIngredents);
+        
     }
   
 };
 
-const arr =  [7, 8, 9];
-const badNewArr = [1, 2, arr[0], arr[1], arr[2]];
 
-console.log(badNewArr);
+
+//Spread Operators : is Unpacked an array into elements
+//Rest Operator : is Packed elements into an array
+
+
+//SPREAD, because on RIGHT of =
+const arr = [1,2,...[3,4]];
+
+
+//Rest, because on LEFT side of =
+const [a , b ,...others ] = [1,2,3,4,5]
+
+console.log(a, b, others);
+
+const [pizza, risotto,...otherFood ] = [...restaurant.mainMenu, ...restaurant.startMenu]  
+
+//pizza : array, rissito : array, 
+console.log(pizza, risotto, otherFood);
+
+
+//Objects
+const {sat, ...weekDays} = restaurant.openingHours;
+
+console.log(weekDays);
+
+//2) functions
+
+const add = function(...numbers){
+
+    let sum = 0;
+    for (let index = 0; index <numbers.length; index++) {
+        sum += numbers[index];
+    }
+    console.log(sum);
+};
+
+add(2,3);
+add(5,3,7,2);
+add(8,2,5,3,2,1,4);
+
+const x =[23,5,7];
+
+add(...x);
+
+
+restaurant.orderPizza('Mashroms','onion','olives','spinach')
+
+restaurant.orderPizza('mashroms');
+
+
+
+
+
+
+
+
+
+///////////////////////////////////////////
+// const arr =  [7, 8, 9];
+// const badNewArr = [1, 2, arr[0], arr[1], arr[2]];
+
+// console.log(badNewArr);
 
 
 //Spread Operator
 
-const newArr = [1,2,...arr];
+// const newArr = [1,2,...arr];
 
-console.log(newArr);
+// console.log(newArr);
 
 
-console.log(...newArr);
+// console.log(...newArr);
 
-const newMenu = [...restaurant.mainMenu, 'Gnocci'];
+// const newMenu = [...restaurant.mainMenu, 'Gnocci'];
 
-console.log(newMenu);
+// console.log(newMenu);
 
-//Copy array
+// //Copy array
 
-const mainMenuCopy = [...restaurant.mainMenu];
+// const mainMenuCopy = [...restaurant.mainMenu];
 
 //Join 2 arrays
-const menu = [...restaurant.startMenu,...restaurant.mainMenu];
+// const menu = [...restaurant.startMenu,...restaurant.mainMenu];
 
-console.log(menu);
+// console.log(menu);
 
 //itirables : arrays, maps,String , sets ,but not objects
 
-const str = 'Ahmed';
+// const str = 'Ahmed';
 
-const letters = [...str, ' ', 'S.'];
+// const letters = [...str, ' ', 'S.'];
 
-console.log(letters);
+// console.log(letters);
 
-console.log(...str);
+// console.log(...str);
 
 // console.log(`${...str} Ibrahim`);
 
@@ -93,15 +157,15 @@ console.log(...str);
 //Objects
 
 
-const newRestaurant = {foundIn : 1998,...restaurant, founder:"Guisappe"};
+// const newRestaurant = {foundIn : 1998,...restaurant, founder:"Guisappe"};
 
-console.log(newRestaurant);
+// console.log(newRestaurant);
 
-const restaurantCopy = {...restaurant};
+// const restaurantCopy = {...restaurant};
 
-restaurantCopy.name = "Ristorante Roma";
-console.log(restaurantCopy.name);
-console.log(restaurant.name);
+// restaurantCopy.name = "Ristorante Roma";
+// console.log(restaurantCopy.name);
+// console.log(restaurant.name);
 
 
 
