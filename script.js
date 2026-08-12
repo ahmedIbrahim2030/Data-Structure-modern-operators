@@ -41,6 +41,50 @@ const restaurant = {
 };
 
 
+console.log('---------OR--------');
+
+
+
+// Use ANY data Type , retrun any data type, short-circuting
+console.log(3 || 'Ahmed');
+console.log('' || 'ahmed');
+console.log(true || 0);
+console.log(undefined || null);
+
+//Hello: because it's first truthy value
+console.log(undefined || 0 || ''|| 'Hello' || 23 ||null);
+
+
+restaurant.numGuests = 0;
+
+const guests1 = restaurant.numGuests ? restaurant.numGuests : 10;
+
+console.log(guests1);
+
+const guest2 = restaurant.numGuests || 10;
+
+console.log(guest2);
+
+
+console.log('--------AND--------');
+
+console.log(0 && 'Ahmed');
+console.log(7 && 'Ahmed');
+
+console.log('Hello' && 23 && null && "Ahmed");
+
+
+if (restaurant.orderPizza) {
+    restaurant.orderPizza("masrooms", "Spinach");
+};
+
+restaurant.orderPizza && restaurant.orderPizza("mashrooms", "spinach");
+
+
+
+
+
+/*
 
 //Spread Operators : is Unpacked an array into elements
 //Rest Operator : is Packed elements into an array
@@ -94,7 +138,7 @@ restaurant.orderPizza('mashroms');
 
 
 
-
+*/
 
 
 
