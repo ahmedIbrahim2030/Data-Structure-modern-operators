@@ -40,7 +40,34 @@ const restaurant = {
   
 };
 
+//nullish  : null and undefined (not 0 or '')
 
+ restaurant.numGuests = 0;
+const guestCorrect = restaurant.numGuests ?? 10 ;
+
+console.log(guestCorrect);
+
+
+
+const guest = restaurant.numGuests || 10;
+
+console.log(guest);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*
 console.log('---------OR--------');
 
 
@@ -80,7 +107,7 @@ if (restaurant.orderPizza) {
 
 restaurant.orderPizza && restaurant.orderPizza("mashrooms", "spinach");
 
-
+*/
 
 
 
