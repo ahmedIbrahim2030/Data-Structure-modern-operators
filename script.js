@@ -1,5 +1,27 @@
 'use strict';
 
+const weekdays = ['mon', 'tue', 'wed', 'thu', 'fri', 'sat', 'sun'];
+
+
+
+
+const hours = {
+        [weekdays[3]] : {
+            open : 12,
+            close :22
+        },
+        [weekdays[4]]:{
+            open : 11,
+            close : 23 ,
+        },
+       [weekdays[5]]: {
+            open : 0, //open 24 hour
+            close : 12 +12
+        },
+    };
+
+
+
 const restaurant = {
 
     name : "Classico Italiano",
@@ -7,32 +29,19 @@ const restaurant = {
     categories : ["Italian", "Pizzeria", "Vegetarian","Organic"],
     startMenu :["Focaccia", "Bruschetta", "Garlic", "Bread", "Caprese Salad"],
     mainMenu : ["Pizza", "Pasta", "Risotto"], 
-      openingHours : {
-        thu : {
-            open : 12,
-            close :22
-        },
-        fri:{
-            open : 11,
-            close : 23 ,
-        },
-        sat : {
-            open : 0,
-            close : 24
-        },
-    },
     orderDelivery:  function({starterIndex, mainIndex, time, address}) {
         console.log(`Order recieved! ${this.startMenu[starterIndex]} and ${this.mainMenu[mainIndex]} will be delivered to ${address} at ${time}`);
         
-    }
-    ,
-    order : function (starterIndex, mainIndex) {
+    },
+    //ES6 enhanced object literals
+    hours,
+    order(starterIndex, mainIndex) {
         return [this.startMenu[starterIndex],this.mainMenu[mainIndex]];
     } ,
-    orderPasta : function (ing1, ing2, ing3) {
+    orderPasta (ing1, ing2, ing3) {
         console.log(`Here is your delicious pasta with ${ing1}, ${ing2} and ${ing3}`);
     },
-    orderPizza : function(mainIngredents,...otherIngredents){
+    orderPizza(mainIngredents,...otherIngredents){
         console.log(mainIngredents);
         console.log(otherIngredents);
         
@@ -40,9 +49,15 @@ const restaurant = {
   
 };
 
+
+console.log(restaurant);
+
+
+
+/*
+//for-of loop
+
 const menu = [...restaurant.startMenu, ...restaurant.mainMenu];
-
-
 
 for(const item of menu) console.log(item);
 
@@ -55,7 +70,7 @@ for(const [i, el] of menu.entries()){
 
 // console.log(...menu.entries());
 
-
+*/
 
 
 /*
