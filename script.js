@@ -44,9 +44,63 @@ const restaurant = {
         console.log(otherIngredents);
         
     }
-  
 };
 
+//Sets : Collection of unique values without any dublicates
+
+
+const orderSet = new Set(
+    [
+        'pasta',
+        'Pizza',
+        'Pizza',
+        'Rissoto',
+        'pasta',
+        'Pizza'
+    ]
+);
+
+
+
+console.log(orderSet);
+
+console.log(new Set("Ahmed"));
+
+console.log(orderSet.size);
+
+console.log(orderSet.has("Pizza"));
+
+console.log(orderSet.has("Bread"));
+
+orderSet.add("Garlic Bread");
+
+orderSet.delete('Risotto');
+// orderSet.clear();
+
+console.log(orderSet);
+
+//Sets are not indexes
+
+for(const order of orderSet) console.log(order);
+
+//Example
+
+const staff = ['Waiter', 'Chef', 'Waiter', "Manager", "Chef", "Waiter"];
+
+const staffUnique = [...new Set(staff)];
+
+console.log(staffUnique);
+
+console.log(new Set("Waiter", "Chef", "Waiter", "Manager", "Chef", "Waiter").size);
+
+console.log(new Set("Ahmed").size);
+
+
+
+
+
+
+/*
 
 //Property NAMES
 
@@ -81,6 +135,7 @@ for(const [key, {open, close }] of entries){
     
 }
 
+*/
 
 /*
 
