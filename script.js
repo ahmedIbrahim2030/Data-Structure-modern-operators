@@ -1,11 +1,9 @@
 'use strict';
 
+
 const weekdays = ['mon', 'tue', 'wed', 'thu', 'fri', 'sat', 'sun'];
 
-
-
-
-const hours = {
+const openingHours = {
         [weekdays[3]] : {
             open : 12,
             close :22
@@ -16,7 +14,7 @@ const hours = {
         },
        [weekdays[5]]: {
             open : 0, //open 24 hour
-            close : 12 +12
+            close : 24
         },
     };
 
@@ -34,7 +32,7 @@ const restaurant = {
         
     },
     //ES6 enhanced object literals
-    hours,
+    openingHours,
     order(starterIndex, mainIndex) {
         return [this.startMenu[starterIndex],this.mainMenu[mainIndex]];
     } ,
@@ -49,8 +47,52 @@ const restaurant = {
   
 };
 
+if (restaurant.hours && restaurant.hours.mon) {
+    console.log(restaurant.hours.mon.open);
+}
 
-console.log(restaurant);
+//without undefined
+// console.log(restaurant.openingHours.mon.open);
+
+
+//with optional chaining
+
+console.log(restaurant.openingHours.mon?.open);
+console.log(restaurant.openingHours?.mon?.open);
+
+//Example
+
+const days = ["mon", "tue", "wed", "thu", "fri", "sat", "sun"];
+
+for(const day of days){
+    const open = restaurant.openingHours[day]?.open ?? 'Closed';
+    console.log(`On ${day}, we open at ${open}`);
+};
+
+//Methods 
+
+console.log(restaurant.order?? 'Method does not exist');
+
+console.log(restaurant.orderRissoto?.(0, 1)??"Method does not exist");
+
+
+//Arrays
+
+const users = [
+    {
+        name : "Ahmed",
+        email : 'hello@ahmed.io',}
+];
+
+const user = [];
+
+console.log(users[0].name ?? 'User array empty');
+
+if (users.length > 0) {
+    console.log(users[0].name);
+    
+}else console.log('user array empty');
+
 
 
 
