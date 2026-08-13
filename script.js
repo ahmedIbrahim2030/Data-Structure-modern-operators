@@ -49,6 +49,33 @@ const restaurant = {
     }
 };
 
+
+
+
+//Witch data strucure to use
+
+// Simple List : Array or Set
+
+//Key,Value Pairs : We Use Objects or Maps {If we need to descriping the data}
+
+
+//Arrays : use when you need ordered  list of values (might contain dublicates) ==> Use when you need to manipulate data
+
+//Sets : Use when you need to work with unique values [if you need high performance] , use when you want to remove dublicates from arrays
+
+//Objects : More key/value store ==> Easier to write and access values with . and []
+
+//Maps : Better performance, keys can have any data type , Easy to iterate , Easy to compute
+
+
+
+
+
+
+
+/*
+
+
 //Iterate Map
 const question = new Map([
     ['question', "What is the best programming language in the wor;d"], 
@@ -99,6 +126,9 @@ console.log([...question]);
 console.log([...question.keys()]);
 
 console.log([...question.values()]);
+
+
+*/
 
 
 
