@@ -18,6 +18,9 @@ const openingHours = {
         },
     };
 
+    
+
+
 
 
 const restaurant = {
@@ -46,9 +49,60 @@ const restaurant = {
     }
 };
 
+
+//New Operators to make Set Usefull 
+const italianFoods = new Set([
+  "Pasta",
+  "gnocchi",
+  "tomatoes",
+  "olive oil",
+  "garlic",
+  "basil",
+]);
+
+const mexicanFoods = new Set([
+  "tortillas",
+  "beans",
+  "rice",
+  "tomatoes",
+  "avocado",
+  "garlic",
+]);
+
+//order doesn't matter
+const commonFoods = italianFoods.intersection(mexicanFoods);
+
+console.log('Intersection: ', commonFoods);
+
+console.log([...commonFoods]);
+
+const italianMexcainFusion = italianFoods.union(mexicanFoods);
+
+console.log('Union: ',italianMexcainFusion);
+
+console.log(... new Set([...italianFoods, ...mexicanFoods]));
+
+
+const uniqueItalianFoods = italianFoods.difference(mexicanFoods);
+
+console.log('Difference Intalian : ',uniqueItalianFoods );
+
+const uniqureMexcainFoods = mexicanFoods.difference(italianFoods);
+
+console.log(`Difference mexican`,uniqureMexcainFoods);
+
+const uniqueItalianMexicanFoods = italianFoods.symmetricDifference(mexicanFoods);
+
+console.log(uniqueItalianMexicanFoods);
+
+console.log(italianFoods.isDisjointFrom(mexicanFoods));
+
+
+
+////////////////////////////////////
+/*
+
 //Sets : Collection of unique values without any dublicates
-
-
 const orderSet = new Set(
     [
         'pasta',
@@ -97,7 +151,7 @@ console.log(new Set("Ahmed").size);
 
 
 
-
+*/
 
 
 /*
